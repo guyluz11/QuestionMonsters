@@ -17,13 +17,10 @@ namespace GuyGame
         
         public static void Main(string[] args)
         {
-
             new FlowClass();    
 
             Console.WriteLine("Good by");
             Console.ReadKey();
-        
-              
         }
 
        
