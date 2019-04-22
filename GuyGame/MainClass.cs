@@ -18,7 +18,7 @@ namespace GuyGame
         public static void Main(string[] args)
         {
 
-            new FlowClass();    // Start the game
+            new FlowClass();    
 
             Console.WriteLine("Good by");
             Console.ReadKey();
