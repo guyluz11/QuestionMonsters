@@ -147,7 +147,6 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="DB\DB.cs" />
-        <Compile Include="DB\IApiDB.cs" />
         <Compile Include="DB\OpenTrivaJasonObject.cs" />
         <Compile Include="DB\OpenTriviaDB.cs" />
         <Compile Include="Enemys\EnemyBasicEnemyObject.cs" />

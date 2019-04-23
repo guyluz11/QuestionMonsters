@@ -11,7 +11,7 @@
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>GuyGame.Tests</RootNamespace>
         <AssemblyName>GuyGame.Tests</AssemblyName>
-        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
@@ -45,6 +45,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DB\DBTest.cs" />
         <Compile Include="EnemyObjectTestTest.cs" />
         <Compile Include="EnemyJumperObjectTest.cs" />
         <Compile Include="EnemyPistolManObjectTest.cs" />

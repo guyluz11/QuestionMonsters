@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace GuyGame.DB
 {
@@ -25,6 +26,14 @@ namespace GuyGame.DB
 
             listOfQuestions = OpenTriviaDb.GetNewTriviaQuestions(numberOfQuestions, category,
                 difficulty, type);
+                Console.WriteLine("This is list: " + listOfQuestions);
+            if (listOfQuestions.Count == 0)
+            {
+                Console.WriteLine("No category combination" );
+                Console.WriteLine("Please restart the game and choose different one" );
+
+                throw new NullReferenceException(nameof(listOfQuestions));
+            }
             questionsCounter = 0;
         }
 
@@ -58,6 +67,16 @@ namespace GuyGame.DB
 
         public static void getNextQuestion()
         {
+        }
+
+        public static int getNumberOfQuestions()
+        {
+            return listOfQuestions.Count;
+        }
+
+        public static List<QuestionObject> getListOfQuestions()
+        {
+            return listOfQuestions;
         }
     }
 }

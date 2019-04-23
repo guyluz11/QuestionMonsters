@@ -11,16 +11,16 @@ using System.Web.Script.Serialization;
 
 namespace GuyGame.DB
 {
-    public class OpenTriviaDb : IApiDB //Class To get all data from db
+    public class OpenTriviaDb  //Class To get all data from db
     {
         public static readonly List<string> listOfCategories = new List<string>    
         {
             "Any Category", "General Knowledge", "Entertainment: Books", "Entertainment: Film",
-            "Entertainment: Music", "Entertainment: Musicals &amp; Theatres", "Entertainment: Television",
-            "Entertainment: Video Games", "Entertainment: Board Games", "Science &amp; Nature",
+            "Entertainment: Music", "Entertainment: Musicals & Theatres", "Entertainment: Television",
+            "Entertainment: Video Games", "Entertainment: Board Games", "Science & Nature",
             "Science: Computers", "Science: Mathematics", "Mythology", "Sports", "Geography", "History",
             "Politics", "Art", "Celebrities", "Animals", "Vehicles", "Entertainment: Comics",
-            "Science: Gadgets", "Entertainment: Japanese Anime &amp; Manga", "Entertainment: Cartoon &amp; Animations"
+            "Science: Gadgets", "Entertainment: Japanese Anime & Manga", "Entertainment: Cartoon & Animations"
         }; //List of all categories in openTrivia api
 
         public static readonly Dictionary<string, string> dictionaryOfDifficulties = new Dictionary<string, string>
