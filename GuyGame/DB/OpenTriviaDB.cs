@@ -57,27 +57,20 @@ namespace GuyGame.DB
             Console.WriteLine();
             Console.WriteLine();
 
-            var listQuestuinsObject = new JavaScriptSerializer();
-            var listTrivia = (List<OpenTrivaJasonObject>)listQuestuinsObject.Deserialize(jasonString, typeof(List<OpenTrivaJasonObject>));
+            var listQuestionsObject = new JavaScriptSerializer();
+            var listTrivia = (List<OpenTrivaJasonObject>)listQuestionsObject.Deserialize(jasonString, typeof(List<OpenTrivaJasonObject>));
             
             var QuestionObjectList = new List<QuestionObject>();
-            string questionTemp;
-            string correctAnswerTemp ;
-            string difficultyTemp;
-            string categoryTemp;
-            string typeTemp;
-            List<string> incorrectAnswersTemp;
-            string invalidNameCategoryTemp;
 
             foreach (var questionObjectTemp in listTrivia)
             {
-                questionTemp = questionObjectTemp.question;
-                correctAnswerTemp = questionObjectTemp.correct_answer;
-                difficultyTemp = questionObjectTemp.difficulty;
-                categoryTemp= questionObjectTemp.category;
-                typeTemp = questionObjectTemp.type;
-                incorrectAnswersTemp = questionObjectTemp.incorrect_answers;
-                invalidNameCategoryTemp= questionObjectTemp.__invalid_name__category;
+                var questionTemp = questionObjectTemp.question;
+                var correctAnswerTemp = questionObjectTemp.correct_answer;
+                var difficultyTemp = questionObjectTemp.difficulty;
+                var categoryTemp = questionObjectTemp.category;
+                var typeTemp = questionObjectTemp.type;
+                var incorrectAnswersTemp = questionObjectTemp.incorrect_answers;
+                var invalidNameCategoryTemp = questionObjectTemp.__invalid_name__category;
                 var questionObject = new QuestionObject(questionTemp, correctAnswerTemp, difficultyTemp, categoryTemp, typeTemp, incorrectAnswersTemp, invalidNameCategoryTemp);
 
                 

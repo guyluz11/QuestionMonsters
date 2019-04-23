@@ -37,6 +37,7 @@ namespace GuyGame.Tests
 
         [Test]
         [TestCase(1, 1, "Easy", "True / False")]
+        [TestCase(1, 1, "Easy", "Multiple Choice")]
         public void getQuestionObjectFor_1_Easy_MultipleChoice(int numberOfQuestions, int categoryNumber, string difficulty, string type)
         {
             // Arrange
@@ -59,6 +60,35 @@ namespace GuyGame.Tests
 
         }
 
+   
+        
+        
+        [Test]
+        [TestCaseSource(typeof(DBTestData), "TestCases")]
+        public void getQuestionObjectFor_Centralized(int numberOfQuestions, int categoryNumber, string difficulty, string type)
+        {
+            // Arrange
+            
+            // 1 = General_Knowledge
+            // Easy = easy
+            // Multiple Choice = multiple
+            List<QuestionObject> listOfQuestions;
+
+            // Act
+            listOfQuestions = getQuestionObjectList(numberOfQuestions, categoryNumber, difficulty, type);
+            
+            // Assert
+            Assert.That(listOfQuestions, Has.Exactly(numberOfQuestions).Items);
+            
+            Assert.That(listOfQuestions, Has.Exactly(numberOfQuestions).Matches<QuestionObject>(item => 
+                item.category == OpenTriviaDb.listOfCategories[categoryNumber] && 
+                item.difficulty ==  OpenTriviaDb.dictionaryOfDifficulties[difficulty] &&
+                item.type == OpenTriviaDb.dictionaryOfTypes[type]), "Not All the types are as they suppose to be");
+
+        }
+
+        
+        
         [Test]
         public void getQuestionObjectFor_1_Easy_TrueFalse()
         {

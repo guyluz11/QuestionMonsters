@@ -46,6 +46,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="DB\DBTest.cs" />
+        <Compile Include="DB\DBTestData.cs" />
         <Compile Include="EnemyObjectTestTest.cs" />
         <Compile Include="EnemyJumperObjectTest.cs" />
         <Compile Include="EnemyPistolManObjectTest.cs" />
