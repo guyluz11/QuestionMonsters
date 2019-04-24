@@ -5,7 +5,6 @@ namespace GuyGame.Tests
     public class Jumper
     {
         [Test]
-        [Ignore("no")]
         public void CheckJump()
         {
             const int speed = 14;

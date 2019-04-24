@@ -88,6 +88,31 @@ namespace GuyGame.Tests
         }
 
         
+        [Test]
+        [TestCaseSource(typeof(DBTestData), "ListOfALlQuestionCategoriesCombinationWithoutRandom")]
+        public void getQuestionObjectFor_Centralized_allCategories(int numberOfQuestions, int categoryNumber, string difficulty, string type)
+        {
+            // Arrange
+            
+            // 1 = General_Knowledge
+            // Easy = easy
+            // Multiple Choice = multiple
+            List<QuestionObject> listOfQuestions;
+
+            // Act
+            listOfQuestions = getQuestionObjectList(numberOfQuestions, categoryNumber, difficulty, type);
+            
+            // Assert
+            Assert.That(listOfQuestions, Has.Exactly(numberOfQuestions).Items);
+            
+            Assert.That(listOfQuestions, Has.Exactly(numberOfQuestions).Matches<QuestionObject>(item => 
+                item.category == OpenTriviaDb.listOfCategories[categoryNumber] && 
+                item.difficulty ==  OpenTriviaDb.dictionaryOfDifficulties[difficulty] &&
+                item.type == OpenTriviaDb.dictionaryOfTypes[type]), "Not All the types are as they suppose to be");
+
+        }
+
+        
         
         [Test]
         public void getQuestionObjectFor_1_Easy_TrueFalse()
