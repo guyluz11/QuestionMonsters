@@ -2,7 +2,7 @@
 
 This is console based game that I wrote to practice oop and writing Unit tests.
 
-This game getting the questions from this api https://opentdb.com/ .
+This game getting the questions from [this api](https://opentdb.com/).
 
 
 Before starting the game the player decide the question topic and difficulty.
